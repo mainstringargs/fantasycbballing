@@ -103,7 +103,7 @@ for contest in contests.contests:
         combined_csv = combined_csv.fillna('pydfs')
         combined_csv = combined_csv.sort_values('FPPG',ascending=False)
         #export to csv
-        combined_csv.to_csv( "results/combined_results_"+teams+"_"+LOGDATE+"_"+now+"_"+str(contest.entries_details.maximum)+".csv", index=False, encoding='utf-8-sig',header=['CPT','UTIL','UTIL','UTIL','UTIL','UTIL','Budget','FPPG'])
+        combined_csv.to_csv( "results/cbb_combined_results_"+teams+"_"+LOGDATE+"_"+now+"_"+str(contest.entries_details.maximum)+".csv", index=False, encoding='utf-8-sig',header=['CPT','UTIL','UTIL','UTIL','UTIL','UTIL','Budget','FPPG'])
 
         #print(combined_csv)
 
