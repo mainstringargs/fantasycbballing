@@ -35,7 +35,7 @@ def gen_pydfs(in_filename, out_filename):
     optimizer.set_max_repeating_players(2)
 
     # if you want to see lineups on screen
-    for lineup in optimizer.optimize(10):
+    for lineup in optimizer.optimize(5):
         print(lineup)
     optimizer.export(out_filename)
 
