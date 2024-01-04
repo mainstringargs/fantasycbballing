@@ -40,7 +40,7 @@ def gen_pydfs(in_filename, out_filename):
     optimizer.export(out_filename)
 
 
-cbb_projections = rotowire_scraper.getProjections();
+cbb_projections = rotowire_scraper.get_projections();
 
 newpath = 'results'
 if not os.path.exists(newpath):
