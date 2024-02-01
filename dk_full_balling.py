@@ -32,7 +32,7 @@ def gen_pydfs(in_filename, out_filename):
 
     optimizer.load_players_from_csv(in_filename)
 
-    optimizer.set_max_repeating_players(2)
+   # optimizer.set_max_repeating_players(1)
 
     # if you want to see lineups on screen
     for lineup in optimizer.optimize(5):
