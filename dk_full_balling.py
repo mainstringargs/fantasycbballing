@@ -40,7 +40,6 @@ def gen_pydfs(in_filename, out_filename):
     optimizer.export(out_filename)
 
 
-cbb_projections = rotowire_scraper.get_projections();
 
 newpath = 'results'
 if not os.path.exists(newpath):
@@ -52,7 +51,8 @@ if not os.path.exists(newpath):
 
 now = datetime.now().strftime("%Y%m%d-%H%M%S")
 
-cbb_projections.to_csv(newpath + "/cbb_projections_" + now + ".csv");
+
+cbb_projections = None
 
 for contest in contests.contests:
     starting_time = contest.starts_at
@@ -71,6 +71,10 @@ for contest in contests.contests:
             contest.draft_group_id)
 
         teams = contest.name[contest.name.find("(") + 1:contest.name.find(")")].replace(' ', '_')
+
+        if cbb_projections is None:
+            cbb_projections = rotowire_scraper.get_projections();
+            cbb_projections.to_csv(newpath + "/cbb_projections_" + now + ".csv");
 
         LOGDATE = central.strftime("%Y%m%d-%H%M%S")
 
